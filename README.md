@@ -4,6 +4,13 @@ A personal guitar project focused on feel, tone and expression.
 
 Less notes. More feel.
 
+# Site
+
+My personal guitar site with videos, influences, and music inspirations.
+
+🌐 Visit the site: [Blues & Bends Website](https://HenriqueOliveira08.github.io/blues-and-bends/)
+
+
 ## About
 Blues & Bends is a personal website where I share guitar videos inspired by blues and classic rock, organised by decades and styles.
 
