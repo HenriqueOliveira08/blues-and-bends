@@ -1,0 +1,216 @@
+/* -------------------- */
+/* RESET & BASE */
+/* -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0e0e0e;
+    color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -------------------- */
+/* HEADER */
+/* -------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(14, 14, 14, 0.95);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* -------------------- */
+/* HAMBURGER BUTTON */
+/* -------------------- */
+.menu-btn {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    height: 3px;
+    background-color: #f2f2f2;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* HAMBURGER → X */
+.menu-btn.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-btn.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* -------------------- */
+/* MENU LATERAL */
+/* -------------------- */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #0e0e0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s ease;
+    z-index: 900;
+}
+
+.menu.active {
+    right: 0;
+}
+
+.menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #f2f2f2;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    transition: opacity 0.3s ease;
+}
+
+.menu ul li a:hover {
+    opacity: 0.6;
+}
+
+/* HERO CINEMATOGRÁFICO FLEXÍVEL */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background: #0e0e0e; /* fallback se a imagem não carregar */
+}
+
+/* imagem via pseudo-elemento para maior controle */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/images/hero.jpg') center center / cover no-repeat;
+    z-index: 0;
+    opacity: 0.8; /* diminui se a imagem estiver muito escura */
+}
+
+/* overlay graduada para contraste do texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(14,14,14,0.7), rgba(14,14,14,0.3));
+    z-index: 1;
+}
+
+/* conteúdo do hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #f2f2f2;
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.85;
+}
+
+/* animação suave do texto */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ANIMAÇÃO SIMPLES */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* -------------------- */
+/* FOOTER */
+/* -------------------- */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+.influence {
+    margin-top: 50px;
+    max-width: 700px;
+}
+
+.influence img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin-bottom: 15px;
+    filter: grayscale(100%) contrast(1.1);
+    opacity: 0.9;
+}
+
+.influence strong {
+    font-size: 1.15rem;
+    letter-spacing: 0.8px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.influence p {
+    padding-left: 18px;
+    border-left: 2px solid rgba(255, 255, 255, 0.15);
+}
+
